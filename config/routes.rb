@@ -1,6 +1,19 @@
 IssueTracker::Application.routes.draw do
-  root :to => "home#index"
+  get "solutions/index"
 
+  get "user/index"
+
+  devise_for :users
+
+  root :to => "home#index"
+  namespace :users do
+    resources :issues do
+      resources :solutions
+    end
+  end
+  resources :users
+
+  match '/:username' => 'users#show', :as => "user"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,4 @@
+= simple_form_for [:users, @issue] do |f|
+	=f.input :title, :label => "Issue?"
+	=f.input :description, :label => "Describe it?"
+	=f.submit "Post Issue.", :class => "btn btn-primary"

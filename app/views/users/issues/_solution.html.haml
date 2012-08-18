@@ -1,0 +1,6 @@
+= div_for solution do
+	%h3
+		=solution.title
+		= link_to "x", [:users, solution.issue, solution], :method => :delete, :remote => true
+	=solution.details
+	=link_to solution.user.username,  user_path(solution.user.username)

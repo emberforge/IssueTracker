@@ -1,0 +1,12 @@
+%header
+	%h1
+		=current_user.email
+
+%article
+	= render 'issue_form'
+
+%article
+	= render :partial => 'issue', :collection => @issues
+
+	%footer
+		Issue tracker

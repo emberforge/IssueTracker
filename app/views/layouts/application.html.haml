@@ -6,5 +6,16 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	%body
-		.container-fluid
+		#navbar
+			%nav
+				=link_to IssueTracker,root_path
+
+				%ul
+					-if user_signed_in?
+						%li= link_to "View Public Profile.", "/#{current_user.username}", :method => :delete
+						%li= link_to "Logout", destroy_user_session_path, :method => :delete
+					-else
+						%li= link_to "Sign In", new_user_session_path
+						%li= link_to "Sign Up", new_user_registration_path
+		#everything
 			= yield

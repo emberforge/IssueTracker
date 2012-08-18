@@ -1,0 +1,17 @@
+%h1
+	=@issue.title
+%p
+	=@issue.description
+
+
+= render :partial => "solution", :collection => @solutions
+
+
+// solution form
+-if user_signed_in?
+	=simple_form_for [:users, @issue, @solution] do |f|
+		=f.input :title
+		=f.input :details
+		=f.submit 'Post Solution', :class => "btn btn-primary"
+-else
+	Sign Up to post solution to this issue :)

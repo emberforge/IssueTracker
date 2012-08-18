@@ -13,4 +13,67 @@
 //
 
 
-@import 'bootstrap'
+@import 'bootstrap', 'mixins/css3', 'variables'
+$content_width: 600px
+
+
+$navbar_height: 50px
+h1
+	font-weight: normal
+
+body
+	background: url(background.png)
+	font-family: sans-serif
+
+textarea
+	height: 4em
+
+#everything
+	width: $content_width
+	background: white
+	margin: 0px auto
+	overflow: auto
+
+	header
+		background: #f0f6de
+		padding: 1em
+		@include box-shadow(0 1px 3px $light_gray)
+	article
+		padding: 1em
+a
+	color: black
+
+input, textarea
+	@include border-radius(0 !important)
+
+#navbar
+	width: 100%
+	height: $navbar_height
+	line-height: $navbar_height
+	background: $navbar_color
+	@include box-shadow(0 0 3px gray)
+	margin-bottom: 20px
+
+	nav
+		width: $content_width
+		margin: 0px auto
+
+		ul
+
+			list-style: none
+			float: right
+			li
+				float: left
+				a
+					line-height: $navbar_height
+					display: inline-block
+					color: white
+					margin: 0 0.5em
+
+.issue
+	width: 100%
+	border-bottom: 1px solid $light_gray
+	background: #faf8f7
+
+
+
